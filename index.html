@@ -396,18 +396,22 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Full Name" required>
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" id="contactForm">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div class="form-group" style="display: none;">
+                            <input name="bot-field" />
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="text" name="name" id="name" placeholder="Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject">
+                            <input type="email" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Message" required></textarea>
+                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" placeholder="Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -433,7 +437,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Michal Berco. All Rights Reserved.</p>
+                <p>&copy; 2025 Michal Berco. All Rights Reserved.</p>
                 <p class="credit"><a href="https://krollkim-portfolio.netlify.app/">Developed by Kim Kroll</a></p>
             </div>
         </div>

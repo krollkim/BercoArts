@@ -82,29 +82,29 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Form submission
+// Form submission with Netlify Forms
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
+        // Get form values for validation
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value;
         
         // Simple form validation
         if (!name || !email || !message) {
+            e.preventDefault();
             alert('Please fill in all required fields');
             return;
         }
         
-        // Here you would normally send the form data to a server
-        // For this demo, we'll just display a success message
-        alert('Message sent successfully! We will get back to you soon.');
+        // Show loading state
+        const submitBtn = contactForm.querySelector('.btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
         
-        // Reset form
-        contactForm.reset();
+        // Let Netlify handle the form submission
+        // The form will submit naturally and redirect to success page
     });
 }
 
